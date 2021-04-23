@@ -4,5 +4,10 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="sass">
+  *
+    box-sizing: border-box
+  body
+    margin: 0
+    padding: 0
 </style>
