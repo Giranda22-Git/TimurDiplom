@@ -47,9 +47,9 @@ export default {
   name: 'About',
   data: () => ({
     sliderItems: [
-      'CarouselItems/item1.png',
-      'CarouselItems/item2.png',
-      'CarouselItems/item3.png'
+      'CarouselItems/item1.jpeg',
+      'CarouselItems/item2.jpeg',
+      'CarouselItems/item3.jpeg'
     ],
     Summ: 0
   }),

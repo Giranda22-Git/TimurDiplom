@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper" id="News">
-    <div class="newsImage" :style="{'background': 'url(' + news.imagePath  + ') center no-repeat', 'background-size': 'cover'}">>
+    <div class="newsImage" :style="{'background': 'url(' + news.imagePath  + ') center no-repeat', 'background-size': 'cover'}">
       <div class="text">
         {{ news.title }}
       </div>
@@ -32,8 +32,6 @@ export default {
     .newsImage
       width: 100%
       height: 700px
-      background: url(../assets/CarouselItems/item1.png) center no-repeat
-      background-size: cover
       display: flex
       justify-content: flex-start
       align-items: flex-end
