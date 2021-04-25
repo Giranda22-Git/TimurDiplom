@@ -1,17 +1,31 @@
 <template>
   <div class="wrapper">
     <div class="front">
-      <NewsItem />
+      <NewsItem
+        v-for="news in newsArray"
+        :key="news.title"
+        :news="news"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import NewsItem from './NewsItem.vue'
+import axios from 'axios'
 export default {
   name: 'News',
+  data: () => ({
+    newsArray: []
+  }),
   components: {
     NewsItem
+  },
+  async mounted () {
+    await axios.get('http://localhost:3000/news')
+      .then(response => {
+        this.newsArray = response.data
+      })
   }
 }
 </script>

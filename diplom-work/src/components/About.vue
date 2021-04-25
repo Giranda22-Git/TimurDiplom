@@ -16,7 +16,7 @@
             </div>
             <div class="text">
               получателям помощи из базы фонда <br> <br>
-              402 193 904,03 ₸
+              {{ Summ }} ₸
             </div>
             <div class="left-click" @click="leftClick">
           <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -42,6 +42,7 @@
 
 <script>
 import theCarousel from '@/components/theCarousel.vue'
+import axios from 'axios'
 export default {
   name: 'About',
   data: () => ({
@@ -49,10 +50,17 @@ export default {
       'CarouselItems/item1.png',
       'CarouselItems/item2.png',
       'CarouselItems/item3.png'
-    ]
+    ],
+    Summ: 0
   }),
   components: {
     theCarousel
+  },
+  async mounted () {
+    await axios.get('http://localhost:3000/offertory')
+      .then(response => {
+        this.Summ = response.data.Summ
+      })
   },
   methods: {
     leftClick () {

@@ -32,7 +32,7 @@
           </div>
           <input class="summInput" v-model="SUMM" placeholder="Ввести другую сумму" />
         </div>
-        <div class="paymentButton">
+        <div class="paymentButton" @click="Pay">
           Пожертвовать
         </div>
       </div>
@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+import sweetalert2 from 'sweetalert2'
 export default {
   name: 'PayMent',
   data: () => ({
@@ -49,6 +51,22 @@ export default {
   methods: {
     changeSumm (summ) {
       this.SUMM = summ
+    },
+    async Pay () {
+      const params = {
+        summ: this.SUMM
+      }
+      await axios.post('http://localhost:3000/offertory/Pay', params)
+        .then(response => {
+          if (response.data.ok) {
+            sweetalert2.fire({
+              title: 'OK',
+              text: `спасибо за пожертвование в ${params.summ} ₸`,
+              icon: 'success',
+              confirmButtonText: 'OK'
+            })
+          }
+        })
     }
   }
 }

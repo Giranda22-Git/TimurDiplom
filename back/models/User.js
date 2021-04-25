@@ -6,7 +6,7 @@ const users = new mongoose.Schema({
         unique: true
     },
     Password: {
-        type: mongoose.Schema.Types.Mixed,
+        type: String,
         required: true
     }
 })

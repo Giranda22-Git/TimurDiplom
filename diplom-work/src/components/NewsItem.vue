@@ -1,23 +1,26 @@
 <template>
   <div class="wrapper" id="News">
-    <div class="newsImage" style="'background: url(../assets/CarouselItems/item1.png) center no-repeat">
+    <div class="newsImage" :style="{'background': 'url(' + news.imagePath  + ') center no-repeat', 'background-size': 'cover'}">>
       <div class="text">
-        Этого парня сегодня трахнули у подьезда в 21:00
+        {{ news.title }}
       </div>
     </div>
     <div class="description">
       <span> Описание: </span> <br><br>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum hic, inventore non voluptas sint commodi veniam amet ducimus perferendis sapiente provident nam? Nam repellat nulla velit unde. Explicabo, consequatur in!
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus quidem accusamus a quo alias recusandae, possimus corporis itaque harum sequi excepturi, beatae consequatur fugiat voluptatum, nemo optio ab debitis magni.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat facere illum odio aliquam ut voluptates delectus cumque voluptas commodi. Voluptatibus, aut illum laudantium accusantium illo voluptatem ipsa dolorum vitae non?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, libero alias voluptate impedit voluptatem itaque voluptatibus natus reiciendis perspiciatis? Dolorem necessitatibus officiis odio vitae, totam esse recusandae qui. Voluptatibus, voluptates.
+      {{ news.description }}
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'NewsItem'
+  name: 'NewsItem',
+  props: {
+    news: {
+      type: Object,
+      default: () => {}
+    }
+  }
 }
 </script>
 

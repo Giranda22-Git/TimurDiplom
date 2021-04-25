@@ -35,6 +35,8 @@ async function init(serverData) {
         })
 
         app.use('/users', require('./endPoints/users.js'))
+        app.use('/offertory', require('./endPoints/offertory.js'))
+        app.use('/news', require('./endPoints/news.js'))
     })
     mongoose.connection.emit('open')
 }
