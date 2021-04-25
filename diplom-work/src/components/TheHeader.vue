@@ -6,13 +6,13 @@
       <div class="right-content-wrapper">
         <ul>
           <li>
-            О фонде
+            <a href="#About"> Главная </a>
           </li>
           <li>
-            Наша работа
+            <a href="#PayMent"> Пожертвовать </a>
           </li>
           <li>
-            Как помочь
+            <a href="#News"> Новости </a>
           </li>
         </ul>
       </div>
@@ -28,12 +28,12 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  *
-    outline: 1px solid red
   .wrapper
     width: 100%
     height: 85px
     box-shadow: 0 1px 10px black
+    z-index: 101
+    background-color: #fff
     .front
       width: 100%
       height: 100%
@@ -56,6 +56,9 @@ export default {
         font-family: sans-serif
         font-size: 1.25em
         padding: 0
+        a
+          text-decoration: none
+          color: black
     .left-content-wrapper
       background: url(../assets/logo.jpeg) center no-repeat
       background-size: contain

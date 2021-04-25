@@ -10,4 +10,6 @@
   body
     margin: 0
     padding: 0
+  html
+    scroll-behavior: smooth
 </style>

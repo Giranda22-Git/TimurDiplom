@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="img" v-bind:style="{background: 'url(' + require('../assets/' + item_data.imageName) + ') center no-repeat'}">
+    <div class="img" v-bind:style="{background: 'url(' + require('../assets/' + item_data) + ') center no-repeat'}">
     </div>
   </div>
 </template>
@@ -12,8 +12,8 @@ export default {
   }),
   props: {
     item_data: {
-      type: Object,
-      default: () => {}
+      type: String,
+      default: ''
     }
   }
 }

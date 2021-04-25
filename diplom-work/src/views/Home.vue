@@ -2,18 +2,24 @@
   <div class="home">
     <theHeader class="header" />
     <About />
+    <PayMent />
+    <News />
   </div>
 </template>
 
 <script>
 import theHeader from '../components/TheHeader.vue'
 import About from '../components/About.vue'
+import PayMent from '../components/PayMent.vue'
+import News from '../components/News.vue'
 
 export default {
   name: 'Home',
   components: {
     theHeader,
-    About
+    About,
+    PayMent,
+    News
   }
 }
 </script>
