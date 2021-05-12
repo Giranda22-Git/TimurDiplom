@@ -4,11 +4,15 @@ const router = express.Router()
 const mongoUser = require('../models/User.js').mongoUser
 const Login = require('../objects/Login.js')
 
+
+// получение всех пользователей
 router.get('/', async (req, res) => {
     const result = await mongoUser.find().exec()
     res.status(200).send( JSON.stringify(result) )
 })
 
+
+// создание нового пользователя
 router.post('/', async (req, res) => {
     try {
         const data = req.body
@@ -25,6 +29,8 @@ router.post('/', async (req, res) => {
     }
 })
 
+
+// авторизация пользователя
 router.post('/autorization', async (req, res) => {
     try {
         const user = await mongoUser.findOne({'Login._login': req.body.login}).exec()

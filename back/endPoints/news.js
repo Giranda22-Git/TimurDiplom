@@ -9,23 +9,28 @@ const tmpDir = __dirname + '/tmp/'
 const uploadDir = __dirname + '/tmp/'
 const upload = multer({dest: './endPoints/tmp/'})
 
+// начало; получение всех новостей
 router.get('/', async (req, res) => {
     const result = await mongoNews.find().exec()
     res.status(200).send( JSON.stringify(result) )
 })
+// конец; получение всех новостей
 
+
+// начало; получение картинки по id новости
 router.get('/load/:nid', async (req, res) => {
     const resNews = await mongoNews.findById(req.params.nid)
-    console.log(resNews.image)
     res.sendFile(resNews.image)
 })
+// конец; получение картинки по id новости
 
+
+// начало; создание новости
 router.post('/', upload.single('file'), async (req, res) => {
     try {
         const data = req.body
 
         const image = req.file
-        console.log(image)
 
         let imageString = null
 
@@ -46,5 +51,9 @@ router.post('/', upload.single('file'), async (req, res) => {
         res.sendStatus(500)
     }
 })
+// конец; создание новости
+
+
+// удаление новости
 
 module.exports = router
