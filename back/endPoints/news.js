@@ -47,13 +47,28 @@ router.post('/', upload.single('file'), async (req, res) => {
         res.status(200).send( JSON.stringify( result ) )
     }
     catch(err) {
-        console.log(err);
+        console.log(err)
         res.sendStatus(500)
     }
 })
 // конец; создание новости
 
 
-// удаление новости
+// начало получение новости по id
+router.get('/:id', async (req, res) => {
+  const result = await mongoNews.findById(req.params.id).exec()
+  res.status(200).json(result)
+})
+// конец получение новости по id
+
+
+// начало удаление новости по id
+router.delete('/:id', async (req, res) => {
+  const newsTmpData = await mongoNews.findById(req.params.id).exec()
+  const result = await mongoNews.deleteOne({ _id: req.params.id }).exec()
+  fs.unlinkSync(newsTmpData.image)
+  res.status(200).json(result)
+})
+// конец удаление новости по id
 
 module.exports = router

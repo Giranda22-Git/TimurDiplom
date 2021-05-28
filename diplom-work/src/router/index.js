@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import AuthAdmin from '../views/authAdmin.vue'
 import AdminPanel from '../views/adminPanel.vue'
+import SingleNewsPage from '../views/SingleNewsPage.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/AdminPanel',
     name: 'AdminPanel',
     component: AdminPanel
+  },
+  {
+    path: '/NewsPage/:id',
+    name: 'SingleNewsPage',
+    component: SingleNewsPage
   }
 ]
 
