@@ -1,8 +1,19 @@
 <template>
   <div id="app">
+    <theHeader />
     <router-view/>
   </div>
 </template>
+
+<script>
+import theHeader from './components/TheHeader.vue'
+export default {
+  name: 'App',
+  components: {
+    theHeader
+  }
+}
+</script>
 
 <style lang="sass">
   *
@@ -12,4 +23,8 @@
     padding: 0
   html
     scroll-behavior: smooth
+  .header
+    position: fixed
+    top: 0
+    left: 0
 </style>

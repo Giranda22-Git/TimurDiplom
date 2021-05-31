@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import AuthAdmin from '../views/authAdmin.vue'
 import AdminPanel from '../views/adminPanel.vue'
 import SingleNewsPage from '../views/SingleNewsPage.vue'
+import About from '../views/AboutPage.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/NewsPage/:id',
     name: 'SingleNewsPage',
     component: SingleNewsPage
+  },
+  {
+    path: '/About',
+    name: 'About',
+    component: About
   }
 ]
 

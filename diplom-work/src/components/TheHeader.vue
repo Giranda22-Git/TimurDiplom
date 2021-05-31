@@ -1,10 +1,13 @@
 <template>
   <div class="wrapper">
     <div class="front">
-      <div class="left-content-wrapper">
-      </div>
+      <router-link to="/" class="left-content-wrapper">
+      </router-link>
       <div class="right-content-wrapper">
         <ul>
+          <li>
+            <router-link to="/About"> О Нас </router-link>
+          </li>
           <li>
             <a href="#About"> Главная </a>
           </li>
